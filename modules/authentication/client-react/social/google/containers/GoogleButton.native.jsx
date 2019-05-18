@@ -19,6 +19,24 @@ const {
   btnText
 } = lookStyles;
 
+const styles = StyleSheet.create({
+  iconWrapper,
+  linkText,
+  link,
+  buttonContainer: {
+    ...buttonContainer,
+    marginTop: 15,
+    backgroundColor: '#c43832'
+  },
+  separator: {
+    ...separator,
+    backgroundColor: '#fff'
+  },
+  btnIconContainer,
+  btnTextContainer,
+  btnText
+});
+
 const googleLogin = () => {
   const url = buildRedirectUrlForMobile('google');
   if (Platform.OS === 'ios') {
@@ -78,23 +96,5 @@ GoogleComponent.propTypes = {
   text: PropTypes.string.isRequired,
   writeQuery: PropTypes.func
 };
-
-const styles = StyleSheet.create({
-  iconWrapper,
-  linkText,
-  link,
-  buttonContainer: {
-    ...buttonContainer,
-    marginTop: 15,
-    backgroundColor: '#c43832'
-  },
-  separator: {
-    ...separator,
-    backgroundColor: '#fff'
-  },
-  btnIconContainer,
-  btnTextContainer,
-  btnText
-});
 
 export default GoogleComponent;

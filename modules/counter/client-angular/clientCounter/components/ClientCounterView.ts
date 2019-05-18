@@ -12,7 +12,11 @@ import { COUNTER_QUERY_CLIENT, ADD_COUNTER_CLIENT } from '@gqlapp/counter-common
   styles: []
 })
 export class ClientCounterButtonComponent {
-  constructor(private apollo: Apollo) {}
+  private apollo: Apollo;
+
+  public constructor(apollo: Apollo) {
+    this.apollo = apollo;
+  }
 
   public increaseCounter() {
     this.apollo
@@ -45,7 +49,11 @@ export class ClientCounterButtonComponent {
 })
 export class ClientCounterViewComponent {
   public counter: any;
-  constructor(private apollo: Apollo) {}
+  private apollo: Apollo;
+
+  public constructor(apollo: Apollo) {
+    this.apollo = apollo;
+  }
 
   public ngOnInit() {
     this.counter = this.apollo

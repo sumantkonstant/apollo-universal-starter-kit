@@ -24,14 +24,14 @@ class ClientModule extends BaseModule {
    *
    * @param modules feature modules
    */
-  constructor(...modules: ClientModuleShape[]) {
+  public constructor(...modules: ClientModuleShape[]) {
     super(...modules);
   }
 
   /**
    * @returns item list for React Navigation drawer
    */
-  get drawerItems() {
+  public get drawerItems() {
     return merge({}, ...(this.drawerItem || []));
   }
 }

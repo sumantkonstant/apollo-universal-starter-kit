@@ -11,7 +11,7 @@ describe('Upload UI works', () => {
     app = renderer.mount();
     renderer.history.push('/upload');
     content = updateContent(app.container);
-    // tslint:disable-next-line:no-unused-expression
+
     expect(content).to.not.be.empty;
   });
 });

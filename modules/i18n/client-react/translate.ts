@@ -2,7 +2,6 @@ import React from 'react';
 
 import settings from '@gqlapp/config';
 
-// tslint:disable-next-line
 const reactI18next = settings.i18n.enabled ? require('react-i18next') : null;
 
 export const translate = (ns: any) => {

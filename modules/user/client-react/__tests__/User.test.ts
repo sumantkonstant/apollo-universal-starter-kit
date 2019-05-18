@@ -31,7 +31,7 @@ describe('User UI works', () => {
     await waitForElementRender(app.container, 'a[href="/profile"]');
     renderer.history.push('/profile');
     content = updateContent(app.container);
-    // tslint:disable-next-line:no-unused-expression
+
     expect(content).to.not.be.empty;
   });
 });

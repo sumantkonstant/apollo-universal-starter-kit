@@ -5,6 +5,7 @@ import { filter, map, mergeMap } from 'rxjs/operators';
 import { ActionReducer, MetaReducer } from '@ngrx/store';
 import { apiUrl, log } from '@gqlapp/core-common';
 import settings from '@gqlapp/config';
+import { TouchableHighlight } from 'react-native';
 
 if (!__TEST__ || settings.app.logging.level === 'debug') {
   log.info(`Connecting to GraphQL backend at: ${apiUrl}`);
@@ -19,7 +20,7 @@ function stateSetter(reducer: ActionReducer<any>): ActionReducer<any> {
   };
 }
 
-const metaReducers: Array<MetaReducer<any, any>> = [stateSetter];
+const metaReducers: MetaReducer<any, any>[] = [stateSetter];
 
 if (module.hot) {
   module.hot.dispose(() => {
@@ -32,12 +33,16 @@ if (module.hot) {
   template: '<router-outlet></router-outlet>'
 })
 class MainComponent implements OnInit {
-  constructor(
-    private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private titleService: Title,
-    private meta: Meta
-  ) {
+  private router: Router;
+  private activatedRoute: ActivatedRoute;
+  private titleService: Title;
+  private meta: Meta;
+
+  public constructor(router: Router, activatedRoute: ActivatedRoute, titleService: Title, meta: Meta) {
+    this.router = router;
+    this.activatedRoute = activatedRoute;
+    this.titleService = titleService;
+    this.meta = meta;
     this.meta.addTag({ name: 'description', content: 'Apollo Universal Starter Kit' });
   }
 

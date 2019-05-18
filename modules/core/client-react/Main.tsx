@@ -61,7 +61,7 @@ export const onAppDispose = (_: any, data: any) => {
 };
 
 class ServerError extends Error {
-  constructor(error: any) {
+  public constructor(error: any) {
     super();
     for (const key of Object.getOwnPropertyNames(error)) {
       this[key] = error[key];
@@ -77,7 +77,7 @@ interface MainState {
 }
 
 export class Main extends React.Component<any, MainState> {
-  constructor(props: any) {
+  public constructor(props: any) {
     super(props);
     const serverError = window.__SERVER_ERROR__;
     serverError ? (this.state = { error: new ServerError(serverError), ready: true }) : (this.state = {});

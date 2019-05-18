@@ -1,4 +1,3 @@
-// tslint:disable:no-unused-expression
 import { expect } from 'chai';
 import CommonModule from '@gqlapp/module-common';
 import i18n from '@gqlapp/i18n-common-react';

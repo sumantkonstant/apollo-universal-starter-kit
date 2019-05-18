@@ -26,7 +26,6 @@ if (!process.env.JEST_WORKER_ID) {
   });
 }
 
-// tslint:disable-next-line
 const { render } = require('./testUtils');
 
 const ref: { clientModules: ClientModule; typeDefs: DocumentNode[] } = { clientModules: null, typeDefs: null };
@@ -43,7 +42,7 @@ class MockLink extends ApolloLink {
   private subscriptionQueries: any;
   private subId: number;
 
-  constructor(schema: GraphQLSchema) {
+  public constructor(schema: GraphQLSchema) {
     super();
     this.schema = schema;
     this.handlers = [];
@@ -52,7 +51,7 @@ class MockLink extends ApolloLink {
     this.subId = 1;
   }
 
-  public request(request: Operation) {
+  public request(request: Operation): Observable<any> {
     const operationAST = getOperationAST(request.query, request.operationName);
     if (!!operationAST && operationAST.operation === 'subscription') {
       return new Observable(observer => {

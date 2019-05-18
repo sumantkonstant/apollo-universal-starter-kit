@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-unfetch';
-import { getOperationAST } from 'graphql';
+import { getOperationAST, DocumentNode } from 'graphql';
 import { BatchHttpLink } from 'apollo-link-batch-http';
 import { ApolloLink } from 'apollo-link';
 import { withClientState } from 'apollo-link-state';
@@ -10,7 +10,7 @@ import { SubscriptionClient, ConnectionParamsOptions } from 'subscriptions-trans
 import ApolloClient from 'apollo-client';
 import ApolloCacheRouter from 'apollo-cache-router';
 import { hasDirectives } from 'apollo-utilities';
-import { DocumentNode } from 'graphql';
+
 import { IResolvers } from 'graphql-tools';
 
 import settings from '@gqlapp/config';
@@ -19,7 +19,7 @@ import log from './log';
 
 interface CreateApolloClientOptions {
   apiUrl?: string;
-  createLink?: Array<(getApolloClient: () => ApolloClient<any>) => ApolloLink>;
+  createLink?: ((getApolloClient: () => ApolloClient<any>) => ApolloLink)[];
   createNetLink?: (apiUrl: string, getApolloClient: () => ApolloClient<any>) => ApolloLink;
   connectionParams?: ConnectionParamsOptions[];
   clientResolvers?: { defaults: { [key: string]: any }; resolvers: IResolvers };

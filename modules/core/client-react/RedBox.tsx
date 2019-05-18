@@ -1,6 +1,6 @@
 import React from 'react';
-import ErrorStackParser from 'error-stack-parser';
-import { StackFrame } from 'error-stack-parser';
+import ErrorStackParser, { StackFrame } from 'error-stack-parser';
+
 import { mapStackTrace } from 'sourcemapped-stacktrace';
 
 import settings from '@gqlapp/config';
@@ -17,7 +17,7 @@ interface RedBoxProps {
 }
 
 export default class RedBox extends React.Component<RedBoxProps, RedBoxState> {
-  constructor(props: RedBoxProps) {
+  public constructor(props: RedBoxProps) {
     super(props);
     this.state = { mapped: false };
   }
@@ -42,7 +42,7 @@ export default class RedBox extends React.Component<RedBoxProps, RedBoxState> {
     const { frame: frameStyle, file, linkToFile } = styles;
 
     return frames.map((frame: StackFrame, index: number) => {
-      const text: string = `at ${frame.fileName}:${frame.lineNumber}:${frame.columnNumber}`;
+      const text = `at ${frame.fileName}:${frame.lineNumber}:${frame.columnNumber}`;
       const url: string = format(
         settings.app.stackFragmentFormat,
         frame.fileName,

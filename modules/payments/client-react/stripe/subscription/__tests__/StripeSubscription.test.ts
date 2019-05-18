@@ -32,7 +32,7 @@ describe('Stripe subscription UI works', () => {
 
     await waitForElementRender(app.container, 'a[href="/subscriber-page"]');
     renderer.history.push('/add-subscription');
-    // tslint:disable:no-unused-expression
+
     expect(updateContent(app.container)).to.not.be.empty;
   });
 });

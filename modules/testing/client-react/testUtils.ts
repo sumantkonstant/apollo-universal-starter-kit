@@ -8,7 +8,6 @@ const dom = new JSDOM('<!doctype html><html><body><div id="root"><div></body></h
 (global as any).HTMLButtonElement = dom.window.HTMLButtonElement;
 (global as any).navigator = dom.window.navigator;
 
-/* tslint:disable no-var-requires */
 const { prettyDOM } = require('dom-testing-library');
 const {
   render,

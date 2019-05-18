@@ -1,12 +1,3 @@
-/// <reference types="mocha" />
-
-declare module '*.graphql' {
-  import { DocumentNode } from 'graphql';
-
-  const value: DocumentNode;
-  export = value;
-}
-
 declare module '*.json' {
   const value: any;
   export = value;
@@ -26,8 +17,4 @@ declare module '@gqlapp/user-server-ts' {
 declare module '@gqlapp/authentication-client-react' {
   const authentication: any;
   export = authentication;
-}
-declare module "*.vue" {
-  import Vue from "vue";
-  export default Vue;
 }

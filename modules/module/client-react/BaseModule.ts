@@ -35,14 +35,14 @@ class BaseModule extends GraphQLModule {
    *
    * @param modules feature modules
    */
-  constructor(...modules: BaseModuleShape[]) {
+  public constructor(...modules: BaseModuleShape[]) {
     super(...modules);
   }
 
   /**
    * @returns Redux reducers
    */
-  get reducers() {
+  public get reducers() {
     return merge({}, ...(this.reducer || []));
   }
 

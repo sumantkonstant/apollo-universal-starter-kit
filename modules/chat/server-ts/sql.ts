@@ -1,4 +1,3 @@
-/*tslint:disable:variable-name*/
 import { knex, orderedFor, returnId } from '@gqlapp/database-server-ts';
 import { UploadedFile } from '@gqlapp/upload-server-ts';
 

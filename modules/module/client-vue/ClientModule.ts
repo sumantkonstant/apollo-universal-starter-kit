@@ -9,11 +9,11 @@ export interface ClientModuleShape extends BaseModuleShape {
 interface ClientModule extends ClientModuleShape {}
 
 class ClientModule extends BaseModule {
-  constructor(...modules: ClientModuleShape[]) {
+  public constructor(...modules: ClientModuleShape[]) {
     super(...modules);
   }
 
-  get routes(): RouteConfig[] {
+  public get routes(): RouteConfig[] {
     return this.route || [];
   }
 }

@@ -1,4 +1,3 @@
-/* tslint:disable:no-unused-expression*/
 import { expect } from 'chai';
 
 import { Renderer, click, blur, find, change, updateContent, wait } from '@gqlapp/testing-client-react';

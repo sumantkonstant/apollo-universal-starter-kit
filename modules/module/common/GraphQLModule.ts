@@ -63,21 +63,21 @@ class GraphQLModule extends CommonModule {
    *
    * @param modules feature modules
    */
-  constructor(...modules: GraphQLModuleShape[]) {
+  public constructor(...modules: GraphQLModuleShape[]) {
     super(...modules);
   }
 
   /**
    * @returns Apollo Link State client-side resolvers
    */
-  get resolvers() {
+  public get resolvers() {
     return merge({}, ...(this.resolver || []));
   }
 
   /**
    * @returns `subscription-transport-ws` WebSocket connection options
    */
-  get connectionParams() {
+  public get connectionParams() {
     return this.connectionParam || [];
   }
 }

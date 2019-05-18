@@ -1,4 +1,4 @@
-export type Errors = Array<{ field: string; message: string }> | { [key: string]: any };
+export type Errors = { field: string; message: string }[] | { [key: string]: any };
 
 export class FieldError {
   public errors: { [key: string]: any };

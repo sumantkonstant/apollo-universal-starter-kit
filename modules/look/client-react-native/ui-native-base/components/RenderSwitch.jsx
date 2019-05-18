@@ -4,6 +4,8 @@ import { Text, StyleSheet, View } from 'react-native';
 import Switch from './Switch';
 import RenderSwitchStyles from '../styles/RenderSwitch';
 
+const styles = StyleSheet.create(RenderSwitchStyles);
+
 const RenderSwitch = ({ label, ...props }) => {
   return (
     <View style={styles.itemContainer}>
@@ -18,7 +20,5 @@ const RenderSwitch = ({ label, ...props }) => {
 RenderSwitch.propTypes = {
   label: PropTypes.string
 };
-
-const styles = StyleSheet.create(RenderSwitchStyles);
 
 export default RenderSwitch;

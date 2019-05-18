@@ -1,8 +1,8 @@
 import * as Expo from 'expo';
 import React from 'react';
 import { View } from 'react-native';
-import App from './App';
 import ClientModule from '@gqlapp/module-client-react-native';
+import App from './App';
 
 interface AwakeInDevAppProps {
   exp: any;
@@ -16,7 +16,7 @@ interface AwakeInDevAppState {
 export default (modules: ClientModule) => {
   // we don't want this to require transformation
   class AwakeInDevApp extends React.Component<AwakeInDevAppProps, AwakeInDevAppState> {
-    constructor(props: AwakeInDevAppProps) {
+    public constructor(props: AwakeInDevAppProps) {
       super(props);
       this.state = { isReady: false };
     }

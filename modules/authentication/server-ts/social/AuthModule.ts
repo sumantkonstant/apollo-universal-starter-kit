@@ -4,7 +4,7 @@ interface AuthModuleShape extends ServerModuleShape {}
 
 interface AuthModule extends AuthModuleShape {}
 class AuthModule extends ServerModule {
-  constructor(...modules: AuthModuleShape[]) {
+  public constructor(...modules: AuthModuleShape[]) {
     super(...modules);
   }
 }

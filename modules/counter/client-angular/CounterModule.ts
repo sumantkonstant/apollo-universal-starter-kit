@@ -7,7 +7,7 @@ export interface CounterModuleShape extends ClientModuleShape {
 interface CounterModule extends CounterModuleShape {}
 
 class CounterModule extends ClientModule {
-  constructor(...modules: CounterModuleShape[]) {
+  public constructor(...modules: CounterModuleShape[]) {
     super(...modules);
   }
 }

@@ -28,6 +28,21 @@ const linkedInLogin = () => {
   }
 };
 
+const styles = StyleSheet.create({
+  iconWrapper,
+  linkText,
+  link,
+  buttonContainer: {
+    ...buttonContainer,
+    marginTop: 15,
+    backgroundColor: '#0077b0'
+  },
+  separator,
+  btnIconContainer,
+  btnTextContainer,
+  btnText
+});
+
 const LinkedInButton = withApollo(({ text }) => {
   return (
     <TouchableOpacity style={styles.buttonContainer} onPress={linkedInLogin}>
@@ -77,20 +92,5 @@ LinkedInComponent.propTypes = {
   type: PropTypes.string,
   text: PropTypes.string.isRequired
 };
-
-const styles = StyleSheet.create({
-  iconWrapper,
-  linkText,
-  link,
-  buttonContainer: {
-    ...buttonContainer,
-    marginTop: 15,
-    backgroundColor: '#0077b0'
-  },
-  separator,
-  btnIconContainer,
-  btnTextContainer,
-  btnText
-});
 
 export default LinkedInComponent;

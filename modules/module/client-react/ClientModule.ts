@@ -6,11 +6,11 @@ import BaseModule, { BaseModuleShape } from './BaseModule';
  */
 export interface ClientModuleShape extends BaseModuleShape {
   // Route list
-  route?: Array<React.ReactElement<any>>;
+  route?: React.ReactElement<any>[];
   // Top left navigation links
-  navItem?: Array<React.ReactElement<any>>;
+  navItem?: React.ReactElement<any>[];
   // Top right navigation links
-  navItemRight?: Array<React.ReactElement<any>>;
+  navItemRight?: React.ReactElement<any>[];
   // URL list to 3rd party css styles
   stylesInsert?: string[];
   // URL list to 3rd party js scripts
@@ -37,9 +37,8 @@ class ClientModule extends BaseModule {
    * @returns client-side React route components list
    */
   get routes() {
-    return (this.route || []).map(
-      (component: React.ReactElement<any>, idx: number, items: Array<React.ReactElement<any>>) =>
-        React.cloneElement(component, { key: component.key || idx + items.length })
+    return (this.route || []).map((component: React.ReactElement<any>, idx: number, items: React.ReactElement<any>[]) =>
+      React.cloneElement(component, { key: component.key || idx + items.length })
     );
   }
 
@@ -48,7 +47,7 @@ class ClientModule extends BaseModule {
    */
   get navItems() {
     return (this.navItem || []).map(
-      (component: React.ReactElement<any>, idx: number, items: Array<React.ReactElement<any>>) =>
+      (component: React.ReactElement<any>, idx: number, items: React.ReactElement<any>[]) =>
         React.cloneElement(component, {
           key: component.key || idx + items.length
         })
@@ -60,7 +59,7 @@ class ClientModule extends BaseModule {
    */
   get navItemsRight() {
     return (this.navItemRight || []).map(
-      (component: React.ReactElement<any>, idx: number, items: Array<React.ReactElement<any>>) =>
+      (component: React.ReactElement<any>, idx: number, items: React.ReactElement<any>[]) =>
         React.cloneElement(component, {
           key: component.key || idx + items.length
         })

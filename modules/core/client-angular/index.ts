@@ -13,7 +13,7 @@ import { apiUrl, createApolloClient, log } from '@gqlapp/core-common';
 import ClientModule from '@gqlapp/module-client-angular';
 
 // Virtual module, generated in-memory by spinjs, contains count of backend rebuilds
-// tslint:disable-next-line
+// eslint-disable-next-line
 import 'backend_reload';
 
 import { MainComponent, metaReducers } from './Main';
@@ -42,7 +42,12 @@ const createApp = (modules: ClientModule) => {
     providers: []
   })
   class MainModule {
-    constructor(public appRef: ApplicationRef, apollo: Apollo, private appStore: Store<any>) {
+    private appRef: ApplicationRef;
+    private appStore: Store<any>;
+
+    public constructor(appRef: ApplicationRef, apollo: Apollo, appStore: Store<any>) {
+      this.appStore = appStore;
+      this.appRef = appRef;
       apollo.setClient(client);
     }
 

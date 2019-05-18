@@ -10,15 +10,15 @@ export interface ClientModuleShape extends BaseModuleShape {
 interface ClientModule extends ClientModuleShape {}
 
 class ClientModule extends BaseModule {
-  constructor(...modules: ClientModuleShape[]) {
+  public constructor(...modules: ClientModuleShape[]) {
     super(...modules);
   }
 
-  get modules(): any {
+  public get modules(): any {
     return (this.module || []).map((module: any) => module);
   }
 
-  get routes(): Routes {
+  public get routes(): Routes {
     return (this.route || []).map((component: Route) => component);
   }
 }

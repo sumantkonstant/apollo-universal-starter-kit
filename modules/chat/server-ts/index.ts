@@ -1,8 +1,8 @@
+import ServerModule from '@gqlapp/module-server-ts';
 import Chat from './sql';
 
 import schema from './schema';
 import createResolvers, { onAppCreate } from './resolvers';
-import ServerModule from '@gqlapp/module-server-ts';
 import resources from './locales';
 
 export default new ServerModule({

@@ -40,7 +40,7 @@ export const onAppCreate = (modules: ServerModule) => (ref.modules = modules);
 export default (pubsub: PubSub) => ({
   Query: {
     async messages(obj: any, { limit, after }: { limit: number; after: number }, { Chat }: ChatContext) {
-      const edgesArray: Array<{ cursor: number; node: Message }> = [];
+      const edgesArray: { cursor: number; node: Message }[] = [];
       const messages = await Chat.messagesPagination(limit, after);
 
       messages.map((message: Message, index: number) => {

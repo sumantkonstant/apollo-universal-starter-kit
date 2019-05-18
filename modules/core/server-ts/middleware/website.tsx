@@ -10,10 +10,10 @@ import path from 'path';
 import Helmet, { HelmetData } from 'react-helmet';
 import serialize from 'serialize-javascript';
 import { GraphQLSchema } from 'graphql';
-import { isApiExternal, apiUrl } from '@gqlapp/core-common';
+import { isApiExternal, apiUrl, createApolloClient, createReduxStore } from '@gqlapp/core-common';
 import ServerModule from '@gqlapp/module-server-ts';
 import ClientModule from '@gqlapp/module-client-react';
-import { createApolloClient, createReduxStore } from '@gqlapp/core-common';
+
 import { styles } from '@gqlapp/look-client-react';
 
 let assetMap: { [key: string]: string };
@@ -21,7 +21,7 @@ let assetMap: { [key: string]: string };
 interface HtmlProps {
   content: string;
   state: any;
-  css: Array<ReactElement<{}>>;
+  css: ReactElement<{}>[];
   helmet: HelmetData;
 }
 

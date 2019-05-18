@@ -80,7 +80,7 @@ class ServerModule extends CommonModule {
    *
    * @param modules feature modules
    */
-  constructor(...modules: ServerModuleShape[]) {
+  public constructor(...modules: ServerModuleShape[]) {
     super(...modules);
   }
 

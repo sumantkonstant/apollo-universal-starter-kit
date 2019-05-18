@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import counters from './counters';
 import ClientModule from '@gqlapp/module-client-angular';
+import counters from './counters';
 import { CounterComponent } from './containers/Counter';
 
 @NgModule({

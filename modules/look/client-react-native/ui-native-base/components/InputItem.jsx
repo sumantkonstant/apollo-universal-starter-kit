@@ -4,6 +4,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Item, Input } from 'native-base';
 import InputItemStyles from '../styles/InputItem';
 
+const styles = StyleSheet.create(InputItemStyles);
+
 const InputItem = ({ error, ...props }) => {
   return (
     <View>
@@ -18,7 +20,5 @@ const InputItem = ({ error, ...props }) => {
 InputItem.propTypes = {
   error: PropTypes.string
 };
-
-const styles = StyleSheet.create(InputItemStyles);
 
 export default InputItem;

@@ -4,17 +4,17 @@ import { GraphQLModule, GraphQLModuleShape } from '@gqlapp/module-common';
 
 export interface BaseModuleShape extends GraphQLModuleShape {
   // TODO: Add proper type
-  reducer?: Array<{ [key: string]: any }>;
+  reducer?: { [key: string]: any }[];
 }
 
 interface BaseModule extends BaseModuleShape {}
 
 class BaseModule extends GraphQLModule {
-  constructor(...modules: BaseModuleShape[]) {
+  public constructor(...modules: BaseModuleShape[]) {
     super(...modules);
   }
 
-  get reducers() {
+  public get reducers() {
     return merge({}, ...(this.reducer || []));
   }
 }

@@ -12,7 +12,7 @@ interface SubscriptionCardFormViewProps {
 }
 
 export default class SubscriptionCardFormView extends React.Component<SubscriptionCardFormViewProps, any> {
-  constructor(props: SubscriptionCardFormViewProps) {
+  public constructor(props: SubscriptionCardFormViewProps) {
     super(props);
     this.state = { cardInfo: { valid: false } };
   }

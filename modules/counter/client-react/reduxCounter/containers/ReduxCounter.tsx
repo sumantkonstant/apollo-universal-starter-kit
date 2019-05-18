@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { ReduxCounterButton, ReduxCounterView } from '../components/ReduxCounterView';
 import { translate, TranslateFunction } from '@gqlapp/i18n-client-react';
+import { ReduxCounterButton, ReduxCounterView } from '../components/ReduxCounterView';
 
 interface CounterProps {
   t: TranslateFunction;

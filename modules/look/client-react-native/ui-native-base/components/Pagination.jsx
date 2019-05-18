@@ -3,6 +3,39 @@ import PropTypes from 'prop-types';
 import { StyleSheet, Text, View } from 'react-native';
 import { Button } from 'native-base';
 
+const styles = StyleSheet.create({
+  paginationContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  text: {
+    fontSize: 20,
+    alignSelf: 'center'
+  },
+  button: {
+    paddingLeft: 40,
+    paddingRight: 40
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 20
+  },
+  loadMoreView: {
+    flex: 1,
+    flexDirection: 'row'
+  },
+  loadMoreButton: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 10,
+    marginBottom: 10
+  },
+  loadMoreButtonText: {
+    color: 'white'
+  }
+});
 export default class Pagination extends React.Component {
   static propTypes = {
     totalPages: PropTypes.number,
@@ -84,37 +117,3 @@ export default class Pagination extends React.Component {
     }
   }
 }
-
-const styles = StyleSheet.create({
-  paginationContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between'
-  },
-  text: {
-    fontSize: 20,
-    alignSelf: 'center'
-  },
-  button: {
-    paddingLeft: 40,
-    paddingRight: 40
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 20
-  },
-  loadMoreView: {
-    flex: 1,
-    flexDirection: 'row'
-  },
-  loadMoreButton: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 10
-  },
-  loadMoreButtonText: {
-    color: 'white'
-  }
-});

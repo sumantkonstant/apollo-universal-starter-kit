@@ -3,8 +3,8 @@ import { Mutation, Query } from 'react-apollo';
 import update from 'immutability-helper';
 
 import { translate, TranslateFunction } from '@gqlapp/i18n-client-react';
-import { ServerCounterView, ServerCounterButton } from '../components/ServerCounterView';
 import { COUNTER_QUERY, ADD_COUNTER, COUNTER_SUBSCRIPTION } from '@gqlapp/counter-common';
+import { ServerCounterView, ServerCounterButton } from '../components/ServerCounterView';
 
 interface ButtonProps {
   counterAmount: number;
@@ -57,7 +57,7 @@ interface CounterProps {
 class ServerCounter extends React.Component<CounterProps> {
   private subscription: any;
 
-  constructor(props: CounterProps) {
+  public constructor(props: CounterProps) {
     super(props);
     this.subscription = null;
   }

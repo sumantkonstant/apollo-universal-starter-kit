@@ -1,4 +1,3 @@
-/* tslint:disable: variable-name */
 import i18n from 'i18next';
 
 /**
@@ -94,7 +93,7 @@ export const phoneNumber = (value: any) =>
  * Schema interface for the validate function.
  */
 export interface Schema {
-  [key: string]: Array<(value: any, values: { [key: string]: any }) => string | undefined> | Schema;
+  [key: string]: ((value: any, values: { [key: string]: any }) => string | undefined)[] | Schema;
 }
 
 /**

@@ -2,11 +2,6 @@
   "name": "common",
   "private": true,
   "version": "1.0.0",
-  "scripts": {
-    "eslint": "eslint --fix --ext js --ext jsx --ext json .",
-    "tslint": "tslint --fix -p tsconfig.json -c ../../tslint.json",
-    "lint": "yarn eslint && yarn tslint"
-  },
   "dependencies": {
     "apollo-cache-inmemory": "1.4.2",
     "apollo-cache-router": "^1.1.6",

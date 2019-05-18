@@ -1,6 +1,6 @@
 import PdfPrinter from 'pdfmake';
 import { Content, Style } from 'pdfmake/build/pdfmake';
-import fonts from './fonts/Roboto/';
+import fonts from './fonts/Roboto';
 
 interface UserContact {
   id: number;
@@ -35,7 +35,7 @@ export default class PDFBuilder {
     });
   }
 
-  public addList(data: Array<string | number>, type = 'ul') {
+  public addList(data: (string | number)[], type = 'ul') {
     this.content.push({
       [type]: data
     });

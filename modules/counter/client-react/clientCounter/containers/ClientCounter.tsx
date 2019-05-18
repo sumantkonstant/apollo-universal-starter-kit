@@ -1,9 +1,9 @@
 import React from 'react';
 import { Mutation, Query, MutationFn } from 'react-apollo';
 
-import { ClientCounterButton, ClientCounterView } from '../components/ClientCounterView';
 import { COUNTER_QUERY_CLIENT, ADD_COUNTER_CLIENT } from '@gqlapp/counter-common';
 import { translate, TranslateFunction } from '@gqlapp/i18n-client-react';
+import { ClientCounterButton, ClientCounterView } from '../components/ClientCounterView';
 
 interface ButtonProps {
   counterAmount: number;

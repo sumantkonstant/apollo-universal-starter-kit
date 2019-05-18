@@ -13,7 +13,11 @@ import { COUNTER_QUERY, ADD_COUNTER, COUNTER_SUBSCRIPTION } from '@gqlapp/counte
   styles: []
 })
 export class ServerCounterButtonComponent {
-  constructor(private apollo: Apollo) {}
+  private apollo: Apollo;
+
+  public constructor(apollo: Apollo) {
+    this.apollo = apollo;
+  }
 
   public increaseCounter() {
     this.apollo

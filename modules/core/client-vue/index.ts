@@ -5,7 +5,7 @@ import settings from '@gqlapp/config';
 import createApp from './createApp';
 
 // Virtual module, generated in-memory by spinjs, contains count of backend rebuilds
-// tslint:disable-next-line
+// eslint-disable-next-line
 import 'backend_reload';
 
 if (!__TEST__ || settings.app.logging.level === 'debug') {

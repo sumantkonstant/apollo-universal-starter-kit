@@ -7,7 +7,7 @@ import Module, { ModuleShape } from './Module';
  */
 export interface CommonModuleShape extends ModuleShape {
   // Localizations for `i18next` library
-  localization?: Array<{ ns: string; resources: Resource }>;
+  localization?: { ns: string; resources: Resource }[];
   // Feature modules shared context
   appContext?: { [key: string]: any };
 }
@@ -24,14 +24,14 @@ class CommonModule extends Module {
    *
    * @param modules feature modules
    */
-  constructor(...modules: CommonModuleShape[]) {
+  public constructor(...modules: CommonModuleShape[]) {
     super(...modules);
   }
 
   /**
    * @returns localization for i18next library
    */
-  get localizations() {
+  public get localizations() {
     return this.localization || [];
   }
 }

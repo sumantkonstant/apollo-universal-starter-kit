@@ -3,14 +3,14 @@ import { ApolloClient } from 'apollo-client';
 import ClientModule, { ClientModuleShape } from '@gqlapp/module-client-react';
 
 export interface AccessModuleShape extends ClientModuleShape {
-  login?: Array<(client: ApolloClient<any>) => Promise<void>>;
-  logout?: Array<(client: ApolloClient<any>) => Promise<void>>;
+  login?: ((client: ApolloClient<any>) => Promise<void>)[];
+  logout?: ((client: ApolloClient<any>) => Promise<void>)[];
 }
 
 interface AccessModule extends AccessModuleShape {}
 
 class AccessModule extends ClientModule {
-  constructor(...modules: AccessModuleShape[]) {
+  public constructor(...modules: AccessModuleShape[]) {
     super(...modules);
   }
 

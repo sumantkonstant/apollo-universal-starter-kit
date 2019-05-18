@@ -13,7 +13,7 @@ interface CancelSubscriptionProps {
 }
 
 class CancelSubscription extends React.Component<CancelSubscriptionProps, { [key: string]: any }> {
-  constructor(props: CancelSubscriptionProps) {
+  public constructor(props: CancelSubscriptionProps) {
     super(props);
     this.state = {
       submitting: false,

@@ -10,7 +10,7 @@ export interface ModuleShape {
    * A hook called on the very start of the application,
    * right after all the feature modules are imported.
    */
-  onAppCreate?: Array<(modules: Module, entryModule: NodeModule) => void>;
+  onAppCreate?: ((modules: Module, entryModule: NodeModule) => void)[];
 }
 
 /**
@@ -32,7 +32,7 @@ class Module {
    *
    * @param modules feature modules
    */
-  constructor(...modules: ModuleShape[]) {
+  public constructor(...modules: ModuleShape[]) {
     foldTo(this, modules);
   }
 

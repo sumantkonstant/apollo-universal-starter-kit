@@ -5,7 +5,7 @@ import ClientModule from '@gqlapp/module-client-react';
 import { log } from '@gqlapp/core-common';
 
 // Virtual module, generated in-memory by spinjs, contains count of backend rebuilds
-// tslint:disable-next-line
+// eslint-disable-next-line
 import 'backend_reload';
 
 import { onAppCreate as onCreateMain, Main, onAppDispose } from './Main';

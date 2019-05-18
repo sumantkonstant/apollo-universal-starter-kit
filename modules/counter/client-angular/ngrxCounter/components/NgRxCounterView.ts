@@ -10,7 +10,11 @@ import { CounterIncrement } from '../reducers';
   styles: []
 })
 export class NgRxCounterButtonComponent {
-  constructor(private store: Store<{ counter: number }>) {}
+  private store: Store<{ counter: number }>;
+
+  public constructor(store: Store<{ counter: number }>) {
+    this.store = store;
+  }
 
   public increaseCounter() {
     this.store.dispatch(new CounterIncrement());

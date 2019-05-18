@@ -7,6 +7,7 @@ import settings from '@gqlapp/config';
 import StripeSubscriptionDAO from './sql';
 
 const { User } = require('@gqlapp/user-server-ts');
+
 const StripeSubscription = new StripeSubscriptionDAO();
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
