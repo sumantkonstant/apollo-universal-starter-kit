@@ -156,7 +156,7 @@ export default compose(
           }
         });
       };
-      if (error) throw new Error(error);
+      // if (error) throw new Error(error);
       return { loading, posts, subscribeToMore, loadData };
     }
   }),

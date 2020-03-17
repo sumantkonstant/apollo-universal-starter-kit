@@ -1,0 +1,3 @@
+mutation postRemoveFile($id: Int!) {
+  postRemoveFile(id: $id)
+}

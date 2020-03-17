@@ -11,15 +11,18 @@ import PostForm from './PostForm';
 import PostComments from '../containers/PostComments';
 
 const onSubmit = (post, editPost) => values => {
-  editPost(post.id, values.title, values.content);
+  const imageName = localStorage.getItem('imageName');
+  console.log(imageName);
+  editPost(post.id, values.title, values.content, imageName);
 };
 
 const PostEditView = ({ loading, post, match, location, subscribeToMore, editPost, t }) => {
   let postObj = post;
+
   // if new post was just added read it from router
-  if (!postObj && location.state) {
+  /* if (!postObj && location.state) {
     postObj = location.state.post;
-  }
+  }*/
 
   const renderMetaData = () => (
     <Helmet
