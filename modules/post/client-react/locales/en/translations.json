@@ -18,7 +18,6 @@
       "actions": "Actions"
     }
   },
-
   "post": {
     "title": "Edit Post",
     "meta": "An Edit Post page example",
@@ -38,11 +37,10 @@
     "field": {
       "title": "Title",
       "content": "Content",
-	  "photo": "Photo"
+      "photo": "Photo"
     },
-	"uploadMsg": "Drag and drop some files here or click to select files for upload."
+    "uploadMsg": "Drag and drop some files here or click to select files for upload."
   },
-
   "list": {
     "title": "Posts",
     "meta": "A List of All Posts page example",
