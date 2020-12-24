@@ -1,7 +1,13 @@
 import { PubSub, withFilter } from 'graphql-subscriptions';
 import { createBatchResolver } from 'graphql-resolve-batch';
+import settings from '@gqlapp/config';
 // interfaces
 import { Post, Comment, Identifier } from './sql';
+import fileSystemStorage, { UploadFileStream } from './FileSystemStorage';
+
+interface UploadFileStreams {
+  postFiles: [Promise<UploadFileStream>];
+}
 
 interface Edges {
   cursor: number;
@@ -60,6 +66,9 @@ export default (pubsub: PubSub) => ({
     },
     post(obj: any, { id }: Identifier, context: any) {
       return context.Post.post(id);
+    },
+    files(obj: any, args: any, { Upload }: any) {
+      return Upload.files();
     }
   },
   Post: {
@@ -167,6 +176,39 @@ export default (pubsub: PubSub) => ({
         }
       });
       return comment;
+    },
+    async postUploadFiles(obj: any, { postFiles }: UploadFileStreams, { Upload, req }: any) {
+      const { t } = req;
+
+      try {
+        // load files to fs
+        const uploadedFiles = await Promise.all(
+          postFiles.map(async uploadPromise => fileSystemStorage.save(await uploadPromise, settings.upload.uploadDir))
+        );
+
+        // save files data into DB
+        // await Upload.saveFiles(uploadedFiles);
+        return true;
+      } catch (e) {
+        throw new Error(t('upload:fileNotLoaded'));
+      }
+    },
+    async postRemoveFile(obj: {}, { id }: { id: number }, { Upload, req }: any) {
+      const file = await Upload.file(id);
+      const { t } = req;
+
+      if (!file || !(await Upload.deleteFile(id))) {
+        throw new Error(t('upload:fileNotFound'));
+      }
+
+      // remove file
+      try {
+        await fileSystemStorage.delete(file.path);
+      } catch (e) {
+        throw new Error(t('upload:fileNotDeleted'));
+      }
+
+      return true;
     }
   },
   Subscription: {

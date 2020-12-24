@@ -11,7 +11,15 @@ import PostForm from './PostForm';
 import PostComments from '../containers/PostComments';
 
 const onSubmit = (post, editPost) => values => {
+  let imageName = '';
+  if (localStorage.getItem('imageName') !== null) {
+    imageName = localStorage.getItem('imageName');
+  }
+  if (values.photo !== '') {
+    imageName = values.photo;
+  }
   editPost(post.id, values.title, values.content);
+  localStorage.removeItem('imageName');
 };
 
 const PostEditView = ({ loading, post, match, location, subscribeToMore, editPost, t }) => {

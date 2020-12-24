@@ -1,0 +1,9 @@
+query postFilesQuery {
+  files {
+    id
+    name
+    type
+    size
+    path
+  }
+}

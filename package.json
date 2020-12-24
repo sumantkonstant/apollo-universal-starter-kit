@@ -32,8 +32,7 @@
     "lint": "yarn eslint && yarn tslint",
     "eslint": "eslint --fix --ext js --ext jsx --ext json .",
     "tslint": "tslint --fix -p tsconfig.json -c tslint.json",
-    "heroku-postbuild": "lerna run --parallel heroku-postbuild --stream",
-    "precommit": "lint-staged",
+    "heroku-postbuild": "lerna run --parallel heroku-postbuild --stream",    
     "postinstall": "opencollective postinstall"
   },
   "lint-staged": {

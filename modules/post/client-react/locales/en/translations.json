@@ -37,8 +37,10 @@
     },
     "field": {
       "title": "Title",
-      "content": "Content"
-    }
+      "content": "Content",
+	  "photo": "Photo"
+    },
+	"uploadMsg": "Drag and drop some files here or click to select files for upload."
   },
 
   "list": {

@@ -38,7 +38,8 @@
     },
     "field": {
       "title": "Заголовок",
-      "content": "Сообщение"
+      "content": "Сообщение",
+	  "photo": "Photo"
     }
   },
 

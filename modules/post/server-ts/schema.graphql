@@ -3,7 +3,19 @@ type Post {
   id: Int!
   title: String!
   content: String!
+  photo: String!
   comments: [Comment]
+}
+
+#upload
+scalar PostFileUpload
+
+type PostFile {
+  id: Int!
+  name: String!
+  type: String!
+  size: Int!
+  path: String!
 }
 
 # Comment
@@ -36,6 +48,8 @@ extend type Query {
   posts(limit: Int, after: Int): Posts
   # Post
   post(id: Int!): Post
+  # Upload
+  postFiles: [PostFile]
 }
 
 extend type Mutation {
@@ -51,12 +65,15 @@ extend type Mutation {
   deleteComment(input: DeleteCommentInput!): Comment
   # Edit a comment
   editComment(input: EditCommentInput!): Comment
+  postUploadFiles(postFiles: [PostFileUpload]!): Boolean!
+  postRemoveFile(id: Int!): Boolean!
 }
 
 # Input for addPost Mutation
 input AddPostInput {
   title: String!
   content: String!
+  photo: String!
 }
 
 # Input for editPost Mutation
@@ -64,6 +81,7 @@ input EditPostInput {
   id: Int!
   title: String!
   content: String!
+  photo: String!
 }
 
 # Input for addComment Mutation
