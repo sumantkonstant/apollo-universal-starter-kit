@@ -3,7 +3,7 @@ type Post {
   id: Int!
   title: String!
   content: String!
-  photo: String!
+  photo: String
   comments: [Comment]
 }
 
